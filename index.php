@@ -1,29 +1,27 @@
-<?php include("db.php") ?>
 
-<?php include("includes/header.php") ?>
-<section id="galeria" class="container">
-    <div class="container p-4">
-        <div class="row">
-<?php
-    $query = "SELECT * FROM imagenes";
-    $resultado = $conn->query($query);
-    while($row = $resultado->fetch_assoc()){
-?>
-        <div class="col-lg-4">
-            <div class="container p-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['nombre']?></h5>
-                        <p class="card-text"><?php echo $row['descripcion']?></p>
-                    </div>
-                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagenes'])?>" class="card-img-bottom, img-fluid   " alt="...">
-                </div>
+
+<?php include("includes/header-login.php") ?>
+
+    <center>
+        <div class="container p-4">
+            <div class="col-md-4">
+                <div class="card card-body">
+                    <h1>Login</h1>
+                    <form action="login.php" method="POST">
+                        <div class="mb-3">
+                            <input type="user" required class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su usuario" name="user">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" required class="form-control" id="exampleFormControlInput1" placeholder="contraseña" name="password">
+                        </div>
+                        <div class="mb-3">
+                            <a class="btn btn-primary" href="registrarse.php" role="button">Registrarse</a>
+                        </div>
+                        <input type="submit" class="btn btn-success btn-block" name="enviar" value="Entrar">
+                    </form>
+                </div>    
             </div>
         </div>
-<?php } ?>
-        </div>
-    </div>
-</section>
-
+    </center>
 
 <?php include("includes/footer.php") ?>

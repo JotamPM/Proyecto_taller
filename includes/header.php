@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,23 +16,25 @@
     <script src="https://kit.fontawesome.com/298a37529f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="home.php">
             <img src="images/camara-reflex-digital.png" alt="" width="40" height="35" class="d-inline-block align-text-top">
                 FOTOGRAFIAS DEL YOTY
             </a>
-            <div class="form-inline">
-                <a href='addimage.php'>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link disabled">Bienvenido <?php echo $_SESSION['name']; ?> </a>
+                <a class="nav-link" href="addimage.php">Añadir imagen</a>
+                <a class="nav-link" href="edit.php">Editar imagen</a>
+            </div>
+                <a href='logout.php'>
                     <button class="btn btn-light mr-2 my-2 my-sm-0" 
-                    type="submit">Añadir Imagen</button>
-                </a>
-                <a href='edit.php'>
-                    <button class="btn btn-light my-2 my-sm-0" 
-                    type="submit">Editar</button>
+                    type="submit">Logout</button>
                 </a>
             </div>
         </div>
     </nav>
-    </div>

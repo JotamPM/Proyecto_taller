@@ -15,10 +15,10 @@
                     <div class="mb-3, container p-4">
                         <input required class="form-control" type="file" name="formFile">
                     </div>
-                        <input type="submit" class="btn btn-success btn-block" name="guardar" value="Guardar">
+                        <input type="submit" class="btn btn-success btn-block" onclick="showMessage('Imagen Añadida')" name="guardar" value="Guardar">
                 </form>
             </div>
         </div>
     </center>
-
+    <div id="snackbar"></div>
 <?php include("includes/footer.php") ?>

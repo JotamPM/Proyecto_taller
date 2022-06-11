@@ -1,7 +1,6 @@
 <?php
 
     include("db.php");
-
     $nombre = $_POST['nombre'];
     $description = $_POST['description'];
     $imagen = addslashes(file_get_contents($_FILES['formFile']['tmp_name']));
